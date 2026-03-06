@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* ── HI TEXT ── */
+.hi-text {
+  font-size: clamp(5rem, 18vw, 13rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1;
+}
+
+/* ── BUTTON ── */
+.btn-main {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  cursor: pointer;
+  padding: 0.7rem 2.2rem;
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  border-radius: 2px;
+}
+.btn-main:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.btn-sad {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  border: 1px solid rgba(170,170,170,0.5);
+  background: transparent;
+  cursor: pointer;
+  padding: 0.7rem 2.2rem;
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  border-radius: 2px;
+}
+.btn-sad:hover {
+  background: #aaa;
+  color: #000;
+  border-color: #aaa;
+}
+
+/* ── FLOATING WORDS ── */
+.word-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-word {
+  position: absolute;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  white-space: nowrap;
+  transform-origin: center center;
+  animation: zoomOutWord var(--dur, 2.5s) ease-out var(--delay, 0s) forwards;
+  opacity: 0;
+}
+
+@keyframes zoomOutWord {
+  0%   { opacity: 0;    transform: scale(3); }
+  12%  { opacity: 1;    transform: scale(2.2); }
+  55%  { opacity: 0.75; transform: scale(1.1); }
+  80%  { opacity: 0.4;  transform: scale(0.65); }
+  100% { opacity: 0;    transform: scale(0.2); }
+}
+
+/* ── MAAF SCREEN ── */
+.maaf-text {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* ── 505 SCREEN ── */
+.error-code {
+  font-size: clamp(7rem, 24vw, 20rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #fff;
+  line-height: 1;
+}
+.error-label {
+  font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 1rem;
+}
+.error-sub {
+  font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+  font-weight: 300;
+  color: #333;
+  margin-top: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── SCREEN BASE ── */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #000;
+}
+
+/* ── DIVIDER LINE ── */
+.thin-line {
+  width: 1px;
+  height: 36px;
+  background: #444;
+  margin: 1.2rem auto;
+}
+
+/* ── SUBTITLE HINT ── */
+.hint-text {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 2rem;
+}
